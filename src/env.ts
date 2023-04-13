@@ -5,7 +5,7 @@ dotenv.config({
 
 export const env = {
     HOST: process.env.APP_HOST || '127.0.0.1',
-    PORT: process.env.APP_PORT || 5000,
+    PORT: process.env.APP_PORT || 3000,
 
     DB: {
         CONNECTION: process.env.DB_CONNECTION || 'mysql',

@@ -1,5 +1,7 @@
 import * as dotenv from 'dotenv'
-dotenv.config()
+dotenv.config({
+    path: `${__dirname}/../.env`
+})
 
 export const env = {
     HOST: process.env.APP_HOST || '127.0.0.1',

@@ -1,3 +1,3 @@
 import db from '../db'
 
-const insert = async () => { await db('products').insert({title: 'Slaughterhouse Five'})}
+const insert = async (req:any) => { await db('products').insert({title: 'Slaughterhouse Five'})}

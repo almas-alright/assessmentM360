@@ -22,4 +22,13 @@
     DB_USERNAME=root  
     DB_PASSWORD=secret
     ```
+  
+ - you need to install [Knex](https://knexjs.org/)  on your local `pm install knex -g` (if installed skip this)
+   
+ - check migration status `knex migrate:status`
+   
+ - migrate all the db tables `knex migrate:latest`
+   
+ - seed tables `knex seed:run` (only attributes table will be seeded, you may skip)
+
  - now run `npm run watch` or `npm run start`

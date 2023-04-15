@@ -4,7 +4,9 @@ export const products = {
     POST_PRODUCT: '/api/product',
     PATCH_PRODUCT: '/api/product/:id',
     DELETE_PRODUCT: '/api/product/:id',
-    GET_PRODUCTS: '/api/products'
+    GET_PRODUCTS: '/api/products',
+    GET_SEARCH_PRODUCTS: '/api/products/search',
+    GET_CATEGORY_PRODUCTS: '/api/categories/:id/products'
 };
 
 export const categories = {
@@ -25,3 +27,20 @@ export const attribues = {
     GET_ATTRIBUTES: '/api/attributes'
 };
 
+export const productAttribues = {
+    GET_PRODUCT_ATTRIBUTE: '/api/productAttribute/:id',
+    PUT_PRODUCT_ATTRIBUTE: '/api/productAttribute/:id',
+    POST_PRODUCT_ATTRIBUTE: '/api/productAttribute',
+    PATCH_PRODUCT_ATTRIBUTE: '/api/productAttribute/:id',
+    DELETE_PRODUCT_ATTRIBUTE: '/api/productAttribute/:id',
+    GET_PRODUCT_ATTRIBUTES: '/api/productAttributes'
+};
+
+export const categoryProducts = {
+    GET_CATEGORY_PRODUCT: '/api/categoryProduct/:id',
+    PUT_CATEGORY_PRODUCT: '/api/categoryProduct/:id',
+    POST_CATEGORY_PRODUCT: '/api/categoryProduct',
+    PATCH_CATEGORY_PRODUCT: '/api/categoryProduct/:id',
+    DELETE_CATEGORY_PRODUCT: '/api/categoryProduct/:id',
+    GET_CATEGORY_PRODUCTS: '/api/categoryProducts'
+};

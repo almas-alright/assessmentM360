@@ -7,6 +7,8 @@ export async function up(knex: Knex): Promise<void> {
         table.foreign('product_id').references('products.id').onDelete('CASCADE');
         table.bigInteger('attribute_id').unsigned().notNullable();
         table.foreign('attribute_id').references('attributes.id').onDelete('CASCADE');
+        table.string('value').notNullable();
+        table.boolean('status').defaultTo(true);
     });
 }
 

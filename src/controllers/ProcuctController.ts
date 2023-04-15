@@ -1,6 +1,6 @@
 import { ErrorHttpResponse } from '../services/error/errorHttpResponse.service'
 import { GeneralQuery } from "../queries/GeneralQuery";
-
+import * as productQuery from "../queries/product"
 
 export const createProduct = (req: any, res: any) => {
     return new GeneralQuery('products')
@@ -99,8 +99,8 @@ export const deleteProduct = (req: any, res: any) => {
 }
 
 export const getProduct = (req: any, res: any) => {
-    return new GeneralQuery('products')
-        .getItem(req)
+    return productQuery
+        .getProduct(req)
         .then((attribute: any) => {
             if (attribute === null) {
                 res.status(404).send({
@@ -138,6 +138,44 @@ export const getProducts = (req: any, res: any) => {
             res.status(400).send({
                 success: false,
                 message: 'Products fetch failed.',
+                errors: new ErrorHttpResponse(errors).generate()
+            });
+        });
+}
+
+export const searchProducts = (req: any, res: any) => {
+    return productQuery
+        .searchProduct(req)
+        .then((products: any) => {
+            res.status(200).send({
+                success: true,
+                message: 'Products search succeeded.',
+                data: products
+            });
+        })
+        .catch((errors: any) => {
+            res.status(400).send({
+                success: false,
+                message: 'Products search failed.',
+                errors: new ErrorHttpResponse(errors).generate()
+            });
+        });
+}
+
+export const categoryProducts = (req: any, res: any) => {
+    return productQuery
+        .categoryProducts(req)
+        .then((products: any) => {
+            res.status(200).send({
+                success: true,
+                message: 'Products of Category succeeded.',
+                data: products
+            });
+        })
+        .catch((errors: any) => {
+            res.status(400).send({
+                success: false,
+                message: 'Products of Category failed.',
                 errors: new ErrorHttpResponse(errors).generate()
             });
         });

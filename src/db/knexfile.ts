@@ -47,7 +47,7 @@ const config: { [key: string]: Knex.Config } = {
       port: 3306,
       user: env.DB.USERNAME,
       password: env.DB.PASSWORD,
-      database: env.DB.DATABASE
+      database: env.DB.DATABASE,
     },
     pool: {
       min: 2,

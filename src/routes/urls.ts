@@ -6,7 +6,7 @@ export const products = {
     DELETE_PRODUCT: '/api/product/:id',
     GET_PRODUCTS: '/api/products',
     GET_SEARCH_PRODUCTS: '/api/products/search',
-    GET_CATEGORY_PRODUCTS: '/api/categories/:id/products'
+    GET_CATEGORY_PRODUCTS: '/api/categories/:categoryId/products'
 };
 
 export const categories = {
